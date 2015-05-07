@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="plugin" version="1.5" group="logman" method="upgrade" overwrite="true">
+    <identifier>plg:logman.docman</identifier>
+    <name>LOGman - DOCman</name>
+    <author>Joomlatools</author>
+    <creationDate>February 2013</creationDate>
+    <copyright>Copyright (C) 2012 Timble CVBA</copyright>
+    <license>GNU GPLv3 - http://www.gnu.org/licenses/gpl.html</license>
+    <authorEmail>info@joomlatools.eu</authorEmail>
+    <authorUrl>www.joomlatools.com</authorUrl>
+    <version>1.0.0RC4</version>
+    <description>Handles logging of DOCman v1.x events</description>
+
+    <files>
+        <filename plugin="docman">docman.php</filename>
+    </files>
+
+    <params />
+
+    <config>
+        <fields name="params" />
+    </config>
+</install>

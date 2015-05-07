@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" method="upgrade">
+    <name>2 Click Social Buttons</name>
+    <version>2.5-2</version>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <author>Viktor Vogel</author>
+    <authorEmail>admin@kubik-rubik.de</authorEmail>
+    <authorUrl>http://joomla-extensions.kubik-rubik.de/</authorUrl>
+    <copyright>Copyright 2011 Viktor Vogel. All rights reserved.</copyright>
+    <creationDate>21-Aug-2012</creationDate>
+    <description>MOD_2CLICKSOCIALBUTTONS_XML_DESCRIPTION</description>
+    <files>
+        <filename module="mod_2clicksocialbuttons">mod_2clicksocialbuttons.php</filename>
+        <filename module="mod_2clicksocialbuttons">helper.php</filename>
+        <filename module="mod_2clicksocialbuttons">2clicksocialbuttons.css</filename>
+        <filename module="mod_2clicksocialbuttons">index.html</filename>
+        <filename module="mod_2clicksocialbuttons">images/f_off.png</filename>
+        <filename module="mod_2clicksocialbuttons">images/f_en_off.png</filename>
+        <filename module="mod_2clicksocialbuttons">images/t_off.png</filename>
+        <filename module="mod_2clicksocialbuttons">images/gp_off.png</filename>
+        <filename module="mod_2clicksocialbuttons">images/all_off.png</filename>
+        <filename module="mod_2clicksocialbuttons">images/switch.png</filename>
+        <filename module="mod_2clicksocialbuttons">images/info_button.png</filename>
+        <filename module="mod_2clicksocialbuttons">images/index.html</filename>
+        <filename module="mod_2clicksocialbuttons">tmpl/default.php</filename>
+        <filename module="mod_2clicksocialbuttons">tmpl/index.html</filename>
+    </files>
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.mod_2clicksocialbuttons.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.mod_2clicksocialbuttons.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params" addfieldpath="/modules/mod_2clicksocialbuttons/fields">
+            <fieldset name="basic">
+                <field name="facebook_button" type="list" default="1" label="MOD_2CLICKSOCIALBUTTONS_FACEBOOKBUTTON" description="MOD_2CLICKSOCIALBUTTONS_FACEBOOKBUTTONDESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="twitter_button" type="list" default="1" label="MOD_2CLICKSOCIALBUTTONS_TWITTERBUTTON" description="MOD_2CLICKSOCIALBUTTONS_TWITTERBUTTONDESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="twittername" type="text" default="" label="MOD_2CLICKSOCIALBUTTONS_TWITTERNAME" description="MOD_2CLICKSOCIALBUTTONS_TWITTERNAMEDESC" />
+                <field name="googleplus_button" type="list" default="1" label="MOD_2CLICKSOCIALBUTTONS_GOOGLEPLUSONEBUTTON" description="MOD_2CLICKSOCIALBUTTONS_GOOGLEPLUSONEBUTTONDESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="layout" type="list" default="0" label="MOD_2CLICKSOCIALBUTTONS_LAYOUT" description="MOD_2CLICKSOCIALBUTTONS_LAYOUTDESC">
+                    <option value="0">MOD_2CLICKSOCIALBUTTONS_VERTICAL</option>
+                    <option value="1">MOD_2CLICKSOCIALBUTTONS_HORIZONTAL</option>
+                </field>
+            </fieldset>
+            <fieldset name="SEND_BUTTON">
+				<field name="send_url" type="text" default="" label="URLTOSEND" description="URLTOSEND_DESC" />
+				<field name="send_font" type="list" default="" label="FONT" description="FONT_DESC">
+					<option value=""></option>
+					<option value="arial">arial</option>
+					<option value="lucida grande">lucida grande</option>
+					<option value="segoe ui">segoe ui</option>
+					<option value="tahoma">tahoma</option>
+					<option value="trebuchet ms">trebuchet ms</option>
+					<option value="verdana">verdana</option>
+				</field>				
+				<field name="send_colorscheme" type="list" default="light" label="COLOR_SCHEME" description="COLOR_SCHEME_DESC">
+					<option value="light">LIGHT</option>
+					<option value="dark">DARK</option>
+				</field>
+			</fieldset>
+        </fields>
+    </config>
+</extension>

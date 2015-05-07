@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
+	<script src="../../core/jquery-1.8.3.min.js"></script>
+	<script src="js/formvalidate.js"></script>
+	<script>
+		jQuery(document).ready(function($) {
+			$('#myform').formvalidate();
+		});
+	</script>
+</head>
+<body>
+	<div>
+		<form id="myform" action="index.php" method="post">
+			<legend>
+				Registration Form
+			</legend>
+			<fieldset>
+				<div class="formvalidate-label" data-for="name">
+					<label>Name</label>
+					<small>Your Name</small>
+				</div>
+				<div class="formvalidate-field">
+					<input type="text" name="name" id="name" 
+						data-required="true" />
+					<small>Name is required!</small>
+				</div>
+				<div class="formvalidate-label" data-for="dob">
+					<label>DOB</label>
+					<small>Your DOB</small>
+				</div>
+				<div class="formvalidate-field">
+					<input type="text" name="dob" id="dob" 
+						data-date="true"/>
+					<small>DOB is required!</small>
+				</div>
+				<div class="formvalidate-label" data-for="email">
+					<label>Email</label>
+					<small>Your Email</small>
+				</div>
+				<div class="formvalidate-field">
+					<input type="text" name="email" id="email" 
+						data-email="true" />
+					<small>E-mail is required!</small>
+				</div>
+				<div class="formvalidate-label" data-for="phone">
+					<label>Phone</label>
+					<small>Your Phone</small>
+				</div>
+				<div class="formvalidate-field">
+					<input type="text" name="phone" id="phone" 
+						data-number="true" />
+					<small>Phone is required!</small>
+				</div>
+				<button type="submit">asdfasf</button>
+			</fieldset>
+		</form>
+	</div>
+</body>
+</html>

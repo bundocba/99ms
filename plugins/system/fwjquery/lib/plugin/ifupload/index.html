@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="jquery-1.10.1.min.js"></script>
+		<script type="text/javascript" src="script.js"></script>
+		<link type="text/css" href="style.css" rel="stylesheet"/>
+	</head>
+	<body>
+		<form id="myform" name="myform" action="upload.php" method="POST" enctype="multipart/form-data">
+			<input type="file" name="fwfile" class="fwfile" id="fwfile"/>
+			<script>
+			jQuery(document).ready(function() {
+				jQuery(".fwfile").fwfile({
+					name : 'upload',
+					fileTypes : ["jpg", "png"],
+					onSuccess : function(data) {
+						alert(data.msg);
+					},
+					onError : function() {
+						
+					},
+					onFileEmpty: function() {
+						alert("please choose your file first");
+					},
+					onFileError : function() {
+						alert("Your file extension is not allowed!");
+					}
+				});
+			})
+			</script>
+		</form>
+	</body>
+</html>

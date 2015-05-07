@@ -1,0 +1,59 @@
+.jaScrollPaneWrap {
+	overflow: hidden;
+	position: relative;
+}
+
+.jaScrollPane {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.jaScrollBarWrap {
+	position: absolute;
+	right: 0;
+	width: 20px;
+	height: 100%;
+	background: transparent;
+}
+
+.jaScrollButton {
+	margin: 0;
+	padding: 0;
+	display: block;
+	position: absolute;
+	background: transparent;
+	cursor: pointer;
+	left: 5px;
+	width: 16px;
+	height: 16px;
+}
+
+.jaScrollButtonUp {
+	top: 0;
+}
+
+.jaScrollButtonDown {
+	bottom: 0;
+}
+
+.jaScrollBar {
+	position: absolute;
+	margin: 0;
+	padding:0;
+	width: 5px;
+	background: transparent;
+	height: 100%;
+	top: 0;
+	right: 5px;
+}
+
+.jaScrollBarButton {
+	position: absolute;
+	top:0;
+	width: 100%;
+	left: 0;
+	background: #000;
+	border-radius: 5px;
+	cursor: pointer;
+}

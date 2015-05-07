@@ -1,0 +1,29 @@
+.fwcheckbox-wrapper {
+	margin: 0;
+	padding: 0;
+	float: none;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.fwcheckbox-container {
+	margin: 0;
+	padding: 0;
+	float: none;
+	border: 1px solid #191919;
+	display: inline-block;
+	cursor: pointer;
+	width: 10px;
+	height: 10px;
+}
+
+.fwcheckbox-mark {
+	float:left;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+}
+
+.fwcheckbox-checked {
+	background: url('../images/checkMark.png') center center no-repeat;
+}

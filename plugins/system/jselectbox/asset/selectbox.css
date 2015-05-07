@@ -1,0 +1,51 @@
+.clr{
+	clear: both;
+}
+.jsb{
+	display: none;
+}
+.jsbHolder{
+
+}
+.jsbHolder .jsbSelector-wrapper{
+	width:100%;
+	overflow: hidden;
+	position: relative;
+}
+.jsbHolder .jsbSelector-wrapper input[type=text]{
+	border: none;
+	margin: 0 0 0 2px;
+	-webkit-border-radius: inherit;
+	-moz-border-radius: inherit;
+	border-radius: inherit;
+	width: 85%;
+	cursor: pointer;
+}
+.jsbHolder .jsbSelector-wrapper input[type=text]:focus{
+	outline: none;
+}
+.jsbHolder .jsbSelector-wrapper .jsbToggle{
+	position: absolute;
+	right:0;
+	height: inherit;
+  //height:expression(this.parentNode.currentStyle['height']);
+	width:45px;
+	cursor: pointer;
+}
+.jsbHolder ul.jsbOptions{
+	display: block;
+	position: absolute;
+	width : 100%;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	overflow-y: auto;
+	display: none;
+	z-index: 2;
+}
+.jsbHolder ul.jsbOptions li{
+	margin: 0;
+	padding: 0;
+	display: block;
+	cursor: pointer;
+}

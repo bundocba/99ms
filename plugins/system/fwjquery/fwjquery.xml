@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="system">
+	<name>PLG_SYSTEM_FWJQUERY</name>
+	<author>Jack A. Huang</author>
+	<creationDate>August 2013</creationDate>
+	<copyright>Copyright (C) 2005 - 2012 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>jack@futureworkz.com</authorEmail>
+	<authorUrl>www.futureworkz.com</authorUrl>
+	<version>2.0.0</version>
+	<description>
+		PLG_SYSTEM_FWJQUERY_DESC
+	</description>
+	<files>
+		<filename plugin="fwjquery">fwjquery.php</filename>
+		<filename>index.html</filename>
+		<folder>lib</folder>
+		<folder>fields</folder>
+		<folder>language</folder>
+		<folder>helpers</folder>
+	</files>
+
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.plg_system_fwjquery.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.plg_system_fwjquery.sys.ini</language>
+	</languages>
+
+	<config>
+		<fields name="params" addfieldpath="/plugins/system/fwjquery/fields">
+			<fieldset name="basic">
+				<field type="checkboxes" name="load_in" label="Load In">
+					<option value="site">Front-End</option>
+					<option value="administrator">Back-End</option>
+				</field>
+				<field type="radio" name="core_source" label="jQuery Source" default="local">
+					<option value="local">Local</option>
+					<option value="cloud">Cloud</option>
+					<option value="custom">Custom</option>
+				</field>
+				<field type="info" color="red">
+					1.8.3 is the most stable version of jQuery
+				</field>
+				<field type="list" name="core_version" label="jQuery Version" default="1.8.3">
+					<option value="1.10.2">1.10.2</option>
+					<option value="1.9.1">1.9.1</option>
+					<option value="1.9.0">1.9.0</option>
+					<option value="1.8.3">1.8.3</option>
+					<option value="1.8.2">1.8.2</option>
+					<option value="1.8.1">1.8.1</option>
+					<option value="1.8.0">1.8.0</option>
+					<option value="1.7.2">1.7.2</option>
+					<option value="1.6.4">1.6.4</option>
+					<option value="1.6.3">1.6.3</option>
+				</field>
+				<field type="text" name="core_custom_source" label="jQuery Custom Source" size="50"/>
+				<field type="radio" name="core_migrate" label="jQuery Migrate" default="0" 
+					description="If you are using jQuery 1.9.0 or higher, you can use jquery migrate to make the old plugin work">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+			<fieldset name="ui" label="jQuery UI">
+				<field type="radio" name="is_ui" default="0" label="Load jQuery UI">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field type="radio" name="ui_version" default="1.10.0" label="UI Version">
+					<option value="1.10.0">1.10.0</option>
+				</field>
+				<field type="list" name="ui_theme" default="ui-lightness" label="UI Theme">
+					<option value="ui-lightness">Lightness</option>
+					<option value="ui-darkness">Darkness</option>
+				</field>
+			</fieldset>
+			<fieldset name="scrollpane" label="Custom Scroll Pane">
+				<field type="info" color="red">
+					Please note that you have to load jQuery UI to use Custom Scroll Pane.
+				</field>
+				<field type="radio" name="is_scrollpane" label="Load Scroll Pane" default="0">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+			</fieldset>
+			<fieldset name="selectbox" label="Custom Dropdown List">
+				<field type="info" color="red">
+					Please note that you have to load Custom Scroll Pane to use this Custom Dropdown List.
+				</field>
+				<field type="radio" name="is_selectbox" label="Load Selectbox" default="0">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field type="text" name="selectbox_fn_name" 
+					label="Function Name" default="fwselectbox"
+					description="You can use this function to generate a custom dropdownlist"/>
+				<field type="text" name="selectbox_selector"
+					label="CSS Selector" default=".select" description="Your Select Element CSS Selector" />
+				<field type="text" name="selectbox_class"
+					label="Class" default="" description="This class name will be auto added into your selectbox" />
+				<field type="text" name="selectbox_bg_color" 
+					label="Background Color" description="Dropdown List Background Color" />
+				<field type="text" name="selectbox_text_color" 
+					label="Text Color" description="Dropdown List Text Color" />
+				<field type="text" name="selectbox_item_style" 
+					label="Item CSS Style" description="Dropdown List Item CSS Style" />
+				<field type="text" name="selectbox_scrollbar_color" 
+					label="Scrollbar Color" default="#fff" description="Dropdown List Scrollbar Color" />
+				<field type="radio" name="selectbox_search_box" 
+					label="Show Search Box" description="Show Dropdown List Search box" default="false">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+				<field type="text" name="selectbox_search_box_class" 
+					label="Search Box Class" description="Dropdown List Search Box Class" />
+				<field type="text" name="selectbox_max_height" 
+					label="Max-Height" description="Dropdown List Max Height" />
+			</fieldset>
+			<fieldset name="radio" label="Custom Radio Button">
+				<field type="radio" name="is_radio" label="Load Radio" default="0">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field type="text" name="radio_fn_name" 
+					label="Function Name" default="fwradio"
+					description="You can use this function to generate a custom radio button"/>
+				<field type="text" name="radio_selector"
+					label="CSS Selector" default=".radio" description="Your Radio Element CSS Selector" />
+				<field type="text" name="radio_class"
+					label="Class" default="" description="This class name will be auto added into your radio" />
+				<field type="text" name="radio_mark_class" 
+					label="Check Mark Class" description="This class name will be auto added into your radio check mark" />
+				<field type="text" name="radio_label_class" 
+					label="Label Class" description="This class name will be auto added into your radio label" />
+			</fieldset>
+			<fieldset name="checkbox" label="Custom Checkbox Button">
+				<field type="radio" name="is_checkbox" label="Load Checkbox" default="0">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field type="text" name="checkbox_fn_name" 
+					label="Function Name" default="fwcheckbox"
+					description="You can use this function to generate a custom checkbox button"/>
+				<field type="text" name="checkbox_selector"
+					label="CSS Selector" default=".checkbox" description="Your Checkbox Element CSS Selector" />
+				<field type="text" name="checkbox_class"
+					label="Class" default="" description="This class name will be auto added into your checkbox" />
+				<field type="text" name="checkbox_mark_class" 
+					label="Check Mark Class" description="This class name will be auto added into your checkbox check mark" />
+				<field type="text" name="radio_label_class" 
+					label="Label Class" description="This class name will be auto added into your checkbox label" />
+			</fieldset>
+			<fieldset name="ifupload" label="Custom File">
+				<field type="radio" name="is_ifupload" label="Load Custom File" default="0">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field type="text" name="ifupload_fn_name" 
+					label="Function Name" default="fwifupload"
+					description="You can use this function to generate a custom File Upload"/>
+				<field type="text" name="ifupload_selector"
+					label="CSS Selector" default=".ifupload" description="Your File Element CSS Selector" />
+			</fieldset>
+			<fieldset name="popup" label="Custom Popup">
+				<field type="radio" name="is_popup" label="Load Popup" default="0">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field type="text"/>
+			</fieldset>
+			<fieldset name="alert" label="Custom Alert Popup Function">
+				<field type="info" color="red">
+					Please note that you have to load Custom Popup first.
+				</field>
+				<field type="radio" name="is_popup" label="Load Popup" default="0">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field default="fwalert" type="text" size="50" name="alert_fn_name" label="Function Name"/>
+				<field default="" type="text" size="50" 
+					name="alert_bg" label="Background Style" 
+					description="Background CSS Style. Example: red url(image/test.png) repeat-x;"/>
+				<field default="" type="text" size="50" name="alert_popup_class" label="Popup Custom Class" />
+				<field default="" type="text" size="50" 
+					name="alert_popup_bg" label="Popup Background Style" 
+					description="Popup Background CSS Style. Example: red url(image/test.png) repeat-x;"/>
+				<field default="" type="text" size="50" 
+					name="alert_popup_border" label="Popup Border Style" 
+					description="Popup Border CSS Style. Example: 1px solid red"/>
+				<field default="" type="text" size="50" name="alert_popup_width" label="Popup Width" />
+				<field default="" type="text" size="50" name="alert_popup_height" label="Popup Height" />
+				<field default="" type="text" size="50" name="alert_popup_top" label="Popup Top" />
+				<field default="" type="text" size="50" name="alert_animation_speed" label="Animation Speed" />
+				<field default="" type="text" size="50" name="alert_opacity" label="Opacity" />
+				<field default="" type="text" size="50" name="alert_button_class" label="Button Class" />
+				<field default="" type="text" size="50" name="alert_button_value" label="Button Value" />
+			</fieldset>
+
+			<fieldset name="iframe" label="Custom Iframe Popup Function">
+				<field default="fwiframe" type="text" size="50" name="iframe_fn_name" label="Function Name" />
+				<field default="" type="text" size="50" name="iframe_bg" label="Background Style" />
+				<field default="" type="text" size="50" name="iframe_popup_class" label="Popup Custom Class" />
+				<field default="" type="text" size="50" name="iframe_popup_bg" label="Popup Background Style" />
+				<field default="" type="text" size="50" name="iframe_popup_border" label="Popup Border Style" />
+				<field default="" type="text" size="50" name="iframe_popup_width" label="Popup Width" />
+				<field default="" type="text" size="50" name="iframe_popup_height" label="Popup Height" />
+				<field default="" type="text" size="50" name="iframe_iframe_width" label="Iframe Width" />
+				<field default="" type="text" size="50" name="iframe_iframe_height" label="Iframe Height" />
+				<field default="" type="text" size="50" name="iframe_popup_top" label="Popup Top" />
+				<field default="" type="text" size="50" name="iframe_animation_speed" label="Animation Speed" />
+				<field default="" type="text" size="50" name="iframe_opacity" label="Opacity" />
+				<field default="" type="text" size="50" name="iframe_button_class" label="Button Class" />
+				<field default="" type="text" size="50" name="iframe_button_value" label="Button Value" />
+			</fieldset>
+			<fieldset name="html" label="Custom HTML Popup Function">
+				<field default="fwhtml" type="text" size="50" name="html_iframe_function_name" label="Function Name" />
+				<field default="" type="text" size="50" name="html_bg" label="Background Style" />
+				<field default="" type="text" size="50" name="html_popup_class" label="Popup Custom Class" />
+				<field default="" type="text" size="50" name="html_popup_bg" label="Popup Background Style" />
+				<field default="" type="text" size="50" name="html_popup_border" label="Popup Border Style" />
+				<field default="" type="text" size="50" name="html_popup_width" label="Popup Width" />
+				<field default="" type="text" size="50" name="html_popup_height" label="Popup Height" />
+				<field default="" type="text" size="50" name="html_popup_top" label="Popup Top" />
+				<field default="" type="text" size="50" name="html_animation_speed" label="Animation Speed" />
+				<field default="" type="text" size="50" name="html_opacity" label="Opacity" />
+				<field default="" type="text" size="50" name="html_button_class" label="Button Class" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

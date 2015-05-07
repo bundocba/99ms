@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="asset/selectbox.css"/>
+<link rel="stylesheet" type="text/css" href="asset/config.css"/>
+<script type="text/javascript" src="asset/selectbox.js"></script>
+<title>Untitled Document</title>
+</head>
+
+<body>
+	<select class="jselectbox" style="width:500px">
+		<option>DEMO 0001</option>
+		<option>DEMO 0002</option>
+		<option>DEMO 0003</option>
+		<option>DEMO 0004</option>
+		<option>DEMO 0005</option>
+		<option>DEMO 0006</option>
+		<option>DEMO 0007</option>
+		<option>DEMO 0008</option>
+		<option>DEMO 0009</option>
+		<option>DEMO 0010</option>
+        <option>DEMO 0001</option>
+        <option>DEMO 0002</option>
+        <option>DEMO 0003</option>
+        <option>DEMO 0004</option>
+        <option selected="selected">DEMO 0005</option>
+        <option>DEMO 0006</option>
+        <option>DEMO 0007</option>
+        <option>DEMO 0008</option>
+        <option>DEMO 0009</option>
+        <option>DEMO 0010</option>
+        <option>DEMO 0001</option>
+        <option>DEMO 0002</option>
+        <option>DEMO 0003</option>
+        <option>DEMO 0004</option>
+        <option>DEMO 0005</option>
+        <option>DEMO 0006</option>
+        <option>DEMO 0007</option>
+        <option>DEMO 0008</option>
+        <option>DEMO 0009</option>
+        <option>DEMO 0010</option>
+	</select>
+    <script type="text/javascript">
+    jQuery(function() {
+		jQuery(".jselectbox").jselectbox({
+			'effect':'slide',
+			'optionMaxHeight':200,
+			'search':false,
+			'speed':'fast' // fast, slow, null
+		});
+	})
+    </script>
+</body>
+</html>

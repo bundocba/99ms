@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<link href="demo.css" type="text/css" rel="stylesheet" />
+		<script src="../../js/jquery-1.8.0.min.js"></script>
+		<script src="js/fwpopup.js"></script>
+		<link href="css/style.css" type="text/css" rel="stylesheet" />
+		
+		<title>FW Popup jQuery Plugin</title>
+	</head>
+	<body>
+		<div id="page-title">FW Popup jQuery Plugin</div>
+		<div class="pane">
+			<div class="pane-title">
+				How to use Fw Popup jQuery Plugin
+			</div>
+			<div id="implement" class="pane-code">
+				&lt;script src=&#39;../../js/jquery-1.8.0.min.js&#39;&gt;&lt;/script&gt; <span class="comment">// Import jQuery Framework</span><br/>
+				&lt;script src=&#39;js/fwpopup.js&#39;&gt;&lt;/script&gt;<span class="comment">// Import FW Popup Library</span><br/>
+				&lt;link href=&#39;css/style.css&#39; type=&#39;text/css&#39; rel=&#39;stylesheet&#39; /&gt;<span class="comment">// Import FW Popup CSS</span>
+			</div>
+		</div>
+		<div class="pane">
+			<div class="pane-title">
+				Popup Alert
+			</div>
+			<div class="pane-code">
+				jQuery('#alert').click(function() {<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fwalert('Hello every body! We are Futureworkz!');<br/>
+				})
+				
+				<script>
+					jQuery(document).ready(function($) {
+						jQuery('#alert').click(function() {
+							fwalert('Hello every body! We are Futureworkz!');
+						})
+					})
+					
+				</script>
+			</div>
+			<div class="pane-demo">
+				<a id="alert" href="#alert">Alert</a>
+			</div>
+		</div>
+		<div class="pane">
+			<div class="pane-title">
+				Popup Confirm
+			</div>
+			<div class="pane-code">
+				
+				function callOnYes() {<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert('This message is call from Button Yes');<br/>
+				}<br/><br/>
+				
+				function callOnNo() {<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert('This message is call from Button No');<br/>
+				}<br/><br/>
+				
+				jQuery('#confirm').click(function() {<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fwconfirm('Hello! Please choose one option!', callOnYes, callOnNo);<br/>
+				})
+				
+				<script>
+					function callOnYes() {
+						alert('This message is call from Button Yes');
+					}
+					
+					function callOnNo() {
+						alert('This message is call from Button No');
+					}
+					
+					jQuery(document).ready(function($) {
+						jQuery('#confirm').click(function() {
+							fwconfirm('Hello! Please choose one option!', callOnYes, callOnNo);
+						})
+					})
+					
+				</script>
+			</div>
+			<div class="pane-demo">
+				<a id="confirm" href="#confirm">Confirm</a>
+			</div>
+		</div>
+		<div class="pane">
+			<div class="pane-title">
+				Popup Iframe
+			</div>
+			<div class="pane-code">
+				jQuery('#iframe_popup').click(function() {<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fwiframe('http://tuoitre.vn');<br/>
+				})
+				
+				<script>
+					jQuery(document).ready(function($) {
+						$('#iframe_popup').click(function() {
+							fwiframe('http://tuoitre.vn');
+						})
+					})
+					
+				</script>
+			</div>
+			<div class="pane-demo">
+				<a id="iframe_popup" href="#iframe_popup">Iframe Popup</a>
+			</div>
+		</div>
+		<div class="pane">
+			<div class="pane-title">
+				Popup HTML
+			</div>
+			<div id="myhtml" style="text-align: center">
+				HMTL Demo<br/>
+				<table style="text-algin:center; margin: 0 auto;">
+					<thead>
+						<tr>
+							<th>No.</th>
+							<th>Name</th>
+							<th>Age</th>
+							<th>Sex</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>John</td>
+							<td>30</td>
+							<td>Male</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>Lisa</td>
+							<td>20</td>
+							<td>Female</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>Jack</td>
+							<td>20</td>
+							<td>Male</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>Leo</td>
+							<td>31</td>
+							<td>Male</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>Hanson</td>
+							<td>28</td>
+							<td>Male</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="pane-code">
+				jQuery('#html_popup').click(function() {<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fwhtml($('#myhtml').html());<br/>
+				})
+				
+				<script>
+					jQuery(document).ready(function($) {
+						$('#html_popup').click(function() {
+							
+							fwhtml($('#myhtml').html());
+						})
+					})
+					
+				</script>
+			</div>
+			<div class="pane-demo">
+				<a id="html_popup" href="#html_popup">HTML Popup</a>
+			</div>
+		</div>
+		<div class="pane">
+			<div class="pane-title">
+				Custom Popup
+			</div>
+			<div class="pane-code">
+				jQuery.fwpopup({<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;message: 'Put your message here', <span class="comment">// Message to show(HTML or Text)</span><br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: 'default: #000', <span class="comment">//Allow CSS background attribute</span><br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;popupBackground: 'default: #000', <span class="comment">//Allow CSS background attribute</span><br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;popupBorder: 'default: 1px solid red', <span class="comment">//Allow CSS background attribute</span><br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;popupWidth: '250', <span class="comment">// Width of popup window. Default 250px</span><br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;popupHeight: '200',<span class="comment">// Width of popup window. Default 200px</span><br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;top: 0,<span class="comment">// Top Position of the popup window</span><br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;backgroundClickClose: false, <span class="comment">// Close on background Click</span><br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;speed: 300, <span class="comment">// Popup window fadeIn speed</span><br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;opacity: 0.5, <span class="comment">// The opacity of popup background</span><br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;closeButton: false, <span class="comment">//Show Close button</span><br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;closeButtonClass: 'closeButton', <span class="comment">//add class to config your close button</span><br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;buttonClass: 'button', <span class="comment">//add class to config your button</span><br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;button: {<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;my_first_button: {<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'value'	:	'First Button',<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'onClick'	: function() {<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myFirstFunction();<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;my_second_button: {<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'value'	:	'Second Button',<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'onClick'	: function() {<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mySecondFunction();<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+					
+					
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}, <span class="comment">// allow you to add button</span><br/> 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iframe: {<br/>
+					
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;link: http://example.com,<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 350,<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 250<br/>
+					
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <span class="comment">// your Iframe config. If you using iframe, message property will be auto disable</span><br/>
+				}
+				<script>
+					jQuery(document).ready(function($) {
+						$('#custom_popup').click(function() {
+							$.fwpopup({
+								message: 'Hello everybody',
+								background: 'pink',
+								popupBackground: '#f9f9f9',
+								popupBorder: '1px solid #ccc',
+								popupWidth: 450,
+								popupHeight: 300,
+								top: 150,
+								speed: 600,
+								opacity: 0.7,
+								buttonClass: 'button',
+								button:{
+									changeButton: {
+										'onClick'	: 	function() {
+											$('body').css('background','blue');
+										},
+										'value'		:	'Change Background to Blue'
+									},
+									restoreButton: {
+										'onClick'	: 	function() {
+											$('body').css('background','');
+										},
+										'value'		:	'Restore Default Settings'
+									}
+								},
+								closeButton: false,
+								closeButtonClass: 'closeButton'
+							})
+						})
+					})
+					
+				</script>
+			</div>
+			<div class="pane-demo">
+				<a id="custom_popup" href="#custom_popup">Custom Popup</a>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+.jsbHolder{
+	width:400px;
+}
+.jsbHolder .jsbSelector-wrapper{
+	height:23px;
+	background-color: #fff;
+	border: 1px solid #abadb3;
+	color: #000;
+
+}
+.jsbHolder .jsbSelector-wrapper input[type=text]{
+	font-size: 12px;
+	padding: 3px 0;
+	background-color: #fff;
+}
+.jsbHolder .jsbSelector-wrapper .jsbToggle{
+	background: url(../images/arrow.png) no-repeat center center;
+}
+.jsbHolder ul.jsbOptions{
+	background: #fff;
+}
+.jsbHolder ul.jsbOptions li{
+	text-align: left;
+	font-size: 12px;
+	height: 20px;
+	padding: 0;
+	border-bottom: dotted 1px #515151;
+}
+.jsbHolder ul.jsbOptions li.jsbSelected{
+	font-weight: bold;
+}
+.jsbHolder ul.jsbOptions li:hover{
+	background: #6D6D6D;
+	color: #fff;
+}
+.jsbHolder ul.jsbOptions li.jlast{
+
+}

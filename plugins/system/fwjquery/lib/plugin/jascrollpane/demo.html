@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script type="text/javascript" src="jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="jquery-ui.js"></script>
+<script type="text/javascript" src="jascrollpane.js"></script>
+<link type="text/css" href="jascrollpane.css" rel="stylesheet" media="screen">
+<!--
+<script type="text/javascript" src="http://papiedu.futureworkz.com.sg/media/system/js/mootools-core.js"></script>
+<script type="text/javascript" src="http://papiedu.futureworkz.com.sg/media/system/js/core.js"></script>
+<script type="text/javascript" src="http://papiedu.futureworkz.com.sg/media/system/js/caption.js"></script>
+<script type="text/javascript" src="http://papiedu.futureworkz.com.sg/media/system/js/mootools-more.js"></script>
+-->
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	$('.demo-text').jascrollpane({
+		callBacks : {
+			afterScroll: function() {
+				$('#clickDown').html("after");
+			},
+			beforeScroll: function() {
+				$('#clickDown').html("before");
+			}
+		}
+	});
+
+	$('#clickDown').click(function(e) {
+		e.preventDefault();
+		$('.demo-text').jascrollpane("updateContent", "<p>Alibaba</p>");
+		$('#text1').jascrollpane("update");
+	})
+});
+</script>
+<style type="text/css">
+
+.demo-text {
+	margin: 0;
+	padding: 0;
+	max-width: 150px;
+	border: 1px solid red;
+	padding: 20px;
+}
+
+.demo-text p {
+	margin: 0 0 15px 0;
+	padding: 0;
+}
+
+</style>
+</head>
+<body>
+<a id="clickDown" href="#">Down</a>
+<div class="demo-text" id="text1">
+	<p>
+		Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. At vero eos et accusam et justo duo dolores et ea rebum. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+
+		At vero eos et accusam et justo duo dolores et ea rebum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat.. Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
+
+		Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+	</p>
+</div>
+<div class="demo-text">
+	<p>
+		Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. At vero eos et accusam et justo duo dolores et ea rebum. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+
+		At vero eos et accusam et justo duo dolores et ea rebum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat.. Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
+
+		Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+	</p>
+</div>
+</body>
+</html>
